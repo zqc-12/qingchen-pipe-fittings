@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产品详情 — 沧县庆琛金属</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.detail-loading { text-align: center; padding: 120px 20px; }
+.detail-loading .spinner { display:inline-block; width:40px; height:40px; border:3px solid #e8e8ed; border-top-color:#d4762a; border-radius:50%; animation:spin 0.8s linear infinite; margin-bottom:16px; }
+@keyframes spin { to { transform:rotate(360deg); } }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo/logo.png" alt="庆琛金属" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-main">沧县庆琛金属</span>
+        <span class="logo-sub">QINGCHEN METAL</span>
+      </div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav>
+      <ul class="nav-list" id="navList">
+        <li><a href="index.html"><span class="lang-cn">首页</span><span class="lang-en">Home</span></a></li>
+        <li><a href="products.html"><span class="lang-cn">产品</span><span class="lang-en">Products</span></a></li>
+        <li><a href="about.html"><span class="lang-cn">关于我们</span><span class="lang-en">About</span></a></li>
+        <li><a href="contact.html"><span class="lang-cn">联系我们</span><span class="lang-en">Contact</span></a></li>
+        <li><button class="lang-toggle" id="langToggle">EN</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="detail-loading" id="loadingState">
+  <div class="spinner"></div>
+  <p style="color:#86868b">加载产品信息...</p>
+</div>
+
+<div id="pageContent" style="display:none">
+  <section class="detail-header">
+    <div class="container">
+      <a href="products.html" style="display:inline-flex;align-items:center;gap:6px;color:#86868b;font-size:0.85rem;margin-bottom:16px">← <span class="lang-cn">返回产品列表</span><span class="lang-en">Back to Products</span></a>
+      <h1 id="detailTitle" style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-0.03em"></h1>
+    </div>
+  </section>
+
+  <section style="padding:30px 0 40px">
+    <div class="container">
+      <div id="productInfo" style="display:none">
+        <div class="detail-layout">
+          <div class="detail-image-wrap"><img id="mainImage" src="" alt="" style="width:100%;max-height:420px;object-fit:contain;padding:24px"></div>
+          <div>
+            <h2 id="productName" style="font-size:1.8rem;font-weight:700"></h2>
+            <p id="productNameEn" style="color:#86868b;margin-bottom:16px"></p>
+            <div id="productMeta" class="detail-meta-grid"></div>
+            <p id="productDesc" style="color:#6e6e73;line-height:1.7;font-size:0.92rem;margin-bottom:20px"></p>
+            <a href="contact.html" class="btn btn-primary"><span class="lang-cn">立即询价</span><span class="lang-en">Inquire Now</span> →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:30px 0 60px;background:#f5f5f7">
+    <div class="container">
+      <h2 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:6px" id="galleryTitle"><span class="lang-cn">产品图片集</span><span class="lang-en">Product Gallery</span></h2>
+      <p style="text-align:center;color:#86868b;margin-bottom:24px" id="galleryCount"></p>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <section style="padding:60px 0;background:#1d1d1f;text-align:center">
+    <div class="container">
+      <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:14px 36px"><span class="lang-cn">联系我们获取报价</span><span class="lang-en">Contact Us for Quote</span> →</a>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><img src="images/logo/logo.png" alt="庆琛金属" style="height:32px;border-radius:4px"><h4 style="margin-bottom:0"><span class="lang-cn">沧县庆琛金属</span><span class="lang-en">QingChen Metal</span></h4></div>
+        <p><span class="lang-cn">专业不锈钢水暖管件制造商</span><span class="lang-en">Professional SS fittings manufacturer</span></p>
+      </div>
+      <div>
+        <h4><span class="lang-cn">快速链接</span><span class="lang-en">Links</span></h4>
+        <ul>
+          <li><a href="index.html"><span class="lang-cn">首页</span><span class="lang-en">Home</span></a></li>
+          <li><a href="products.html"><span class="lang-cn">产品中心</span><span class="lang-en">Products</span></a></li>
+          <li><a href="about.html"><span class="lang-cn">关于我们</span><span class="lang-en">About</span></a></li>
+          <li><a href="contact.html"><span class="lang-cn">联系我们</span><span class="lang-en">Contact</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-cn">产品分类</span><span class="lang-en">Categories</span></h4>
+        <ul>
+          <li><a href="products.html?cat=elbow"><span class="lang-cn">弯头</span><span class="lang-en">Elbows</span></a></li>
+          <li><a href="products.html?cat=tee"><span class="lang-cn">三通</span><span class="lang-en">Tees</span></a></li>
+          <li><a href="products.html?cat=nipple"><span class="lang-cn">接头</span><span class="lang-en">Nipples</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-cn">联系方式</span><span class="lang-en">Contact</span></h4>
+        <ul>
+          <li>📞 86-13180328989</li>
+          <li><span class="lang-cn">📍 沧县崔尔庄镇大垛庄村东50米</span><span class="lang-en">📍 Dachouzhuang, Cangxian</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 <span class="lang-cn">沧县庆琛金属制品有限公司</span><span class="lang-en">QingChen Metal Products Co., Ltd.</span></div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function() {
+  "use strict";
+  var loadingEl = document.getElementById("loadingState");
+  var contentEl = document.getElementById("pageContent");
+
+  function showContent() {
+    if (loadingEl) loadingEl.style.display = "none";
+    if (contentEl) contentEl.style.display = "block";
+  }
+
+  function showError(msg) {
+    if (loadingEl) {
+      loadingEl.innerHTML = "<p style=\"color:#86868b;font-size:1.1rem\">" + msg + "</p>";
+    }
+  }
+
+  // Check product data
+  if (typeof PRODUCTS === "undefined") {
+    showError("产品数据加载失败，请刷新页面重试");
+    return;
+  }
+
+  // Get URL params
+  var params = new URLSearchParams(window.location.search);
+  var catKey = params.get("cat") || "";
+  var subId = params.get("sub") || "";
+
+  if (!catKey || !subId) {
+    showError("请从产品列表中选择一款产品查看详情");
+    return;
+  }
+
+  var cat = PRODUCTS[catKey];
+  if (!cat) {
+    showError("产品分类未找到: " + catKey);
+    return;
+  }
+
+  var prod = null;
+  if (cat.subs) {
+    for (var i = 0; i < cat.subs.length; i++) {
+      if (cat.subs[i].id === subId) { prod = cat.subs[i]; break; }
+    }
+  }
+  if (!prod) {
+    showError("产品未找到");
+    return;
+  }
+
+  var imgs = prod.images || [];
+  showContent();
+
+  // Set page info
+  document.title = prod.cn + " - 沧县庆琛金属";
+
+  function s(id) { return document.getElementById(id); }
+
+  // Title
+  var dt = s("detailTitle");
+  if (dt) dt.innerHTML = prod.cn + ' <span style="font-size:1rem;color:#86868b;font-weight:400">/ ' + (prod.en || "") + "</span>";
+
+  // Product info
+  var pi = s("productInfo");
+  if (pi) pi.style.display = "block";
+
+  var pn = s("productName");
+  if (pn) pn.textContent = prod.cn;
+
+  var pne = s("productNameEn");
+  if (pne) pne.textContent = (prod.material || "") + " | " + (prod.spec_cn || "");
+
+  var mi = s("mainImage");
+  if (mi) { mi.src = imgs[0] || ""; mi.alt = prod.cn; }
+
+  var pm = s("productMeta");
+  if (pm) {
+    pm.innerHTML =
+      '<div class="detail-meta-card"><div class="label"><span class="lang-cn">材质</span><span class="lang-en">Material</span></div><div class="value">' + (prod.material || "-") + '</div></div>' +
+      '<div class="detail-meta-card"><div class="label"><span class="lang-cn">规格</span><span class="lang-en">Size</span></div><div class="value">' + (prod.spec_cn || "-") + '</div></div>' +
+      '<div class="detail-meta-card"><div class="label"><span class="lang-cn">图片</span><span class="lang-en">Images</span></div><div class="value">' + imgs.length + ' <span class="lang-cn">张</span><span class="lang-en">photos</span></div></div>';
+  }
+
+  var pd = s("productDesc");
+  if (pd) pd.textContent = prod.desc_cn || "";
+
+  // Gallery
+  var gt = s("galleryTitle");
+  if (gt) gt.innerHTML = prod.cn + ' <span style="font-size:1rem;color:#86868b;font-weight:400">- <span class="lang-cn">产品图片集</span><span class="lang-en">Gallery</span></span>';
+
+  var gc = s("galleryCount");
+  if (gc) gc.innerHTML = '<span class="lang-cn">共 <strong>' + imgs.length + '</strong> 张产品图片</span><span class="lang-en"><strong>' + imgs.length + '</strong> product images</span>';
+
+  var gg = s("galleryGrid");
+  if (!gg) return;
+
+  if (imgs.length === 0) {
+    gg.innerHTML = '<div class="loading-state"><p style="color:#86868b"><span class="lang-cn">暂无图片</span><span class="lang-en">No images</span></p></div>';
+    return;
+  }
+
+  var html = "";
+  for (var i = 0; i < imgs.length; i++) {
+    html += '<div class="gallery-item" data-index="' + i + '">';
+    html += '<img src="' + imgs[i] + '" alt="' + prod.cn + " " + (i+1) + '" loading="lazy" onerror="this.style.display=\'none\'">';
+    html += '<div class="badge">' + (i+1) + "/" + imgs.length + "</div></div>";
+  }
+  gg.innerHTML = html;
+
+  // ─── Lightbox ────────────────────────────────────────────
+  var lightbox = document.createElement("div");
+  lightbox.id = "lightbox";
+  lightbox.innerHTML =
+    '<span class="lb-close" id="lbClose">&times;</span>' +
+    '<img class="lb-img" id="lbImg" src="">' +
+    '<div class="lb-controls">' +
+    '<button id="lbPrev">&#8592;</button>' +
+    '<span id="lbCount"></span>' +
+    '<button id="lbNext">&#8594;</button></div>';
+  document.body.appendChild(lightbox);
+
+  var current = 0;
+  function openLightbox(index) {
+    if (index < 0) index = imgs.length - 1;
+    if (index >= imgs.length) index = 0;
+    current = index;
+    document.getElementById("lbImg").src = imgs[current];
+    document.getElementById("lbCount").textContent = (current+1) + " / " + imgs.length;
+    lightbox.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  gg.addEventListener("click", function(e) {
+    var item = e.target.closest(".gallery-item");
+    if (item) openLightbox(parseInt(item.getAttribute("data-index")));
+  });
+
+  document.getElementById("lbClose").onclick = function() {
+    lightbox.style.display = "none";
+    document.body.style.overflow = "";
+  };
+  document.getElementById("lbPrev").onclick = function() { openLightbox(current - 1); };
+  document.getElementById("lbNext").onclick = function() { openLightbox(current + 1); };
+
+  document.addEventListener("keydown", function(e) {
+    if (lightbox.style.display !== "flex") return;
+    if (e.key === "Escape") { lightbox.style.display = "none"; document.body.style.overflow = ""; }
+    if (e.key === "ArrowLeft") openLightbox(current - 1);
+    if (e.key === "ArrowRight") openLightbox(current + 1);
+  });
+
+  // Handle lang change for dynamically inserted content
+  var langBtn = document.getElementById("langToggle");
+  if (langBtn) {
+    var checkLang = function() {
+      var lang = document.documentElement.getAttribute("lang") || "zh-CN";
+      var isEn = lang === "en";
+      document.querySelectorAll(".lang-cn").forEach(function(el) { el.style.display = isEn ? "none" : ""; });
+      document.querySelectorAll(".lang-en").forEach(function(el) { el.style.display = isEn ? "" : "none"; });
+    };
+    document.addEventListener("langchange", checkLang);
+    // Apply on load
+    checkLang();
+  }
+
+  console.log("Product detail loaded:", prod.cn, "(" + imgs.length + " images)");
+})();
+</script>
+</body>
+</html>
+
